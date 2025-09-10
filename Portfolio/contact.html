@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact | Subhanu Sasikumar</title>
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Times New Roman', serif;
+      background: url("images/resume.jpg") no-repeat center center fixed;
+      background-size: cover;
+      padding-top: 80px; /* space below navbar */
+    }
+
+    /* Navbar */
+   .navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-around; /* Logo left, links right */
+  align-items: center;
+  padding: 1rem 3rem;
+  background: rgba(0, 0, 0, 0.25);
+  backdrop-filter: blur(12px);
+  box-shadow: 0 0 20px rgba(0, 123, 255, 0.5);
+  z-index: 1000;
+}
+/* Logo */
+.navbar .logo {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: #0ff;
+  text-shadow: none;
+  transition: all 0.3s;
+}
+.navbar .logo:hover {
+  transform: scale(1.1);
+  text-shadow: 0 0 10px #0ff, 0 0 20px #0ff, 0 0 30px #0ff;
+}
+/* Links */
+.nav-links {
+  display: flex;             /* Keep horizontal */
+  gap: 2rem;                 /* Space between links */
+  list-style: none;
+}
+.nav-links li {
+  position: relative;
+}
+.nav-links li a {
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1rem;
+  color: #fff;
+  padding: 5px 0;
+  text-shadow: 0 0 5px #00f, 0 0 10px #0ff, 0 0 20px #0ff;
+  transition: all 0.3s;
+}
+/* Hover underline animation */
+.nav-links li a::after {
+  content: '';
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 0%;
+  height: 3px;
+  background: linear-gradient(90deg, #00f, #0ff, #0ff);
+  border-radius: 2px;
+  transition: width 0.3s;
+}
+.nav-links li a:hover::after,
+.nav-links li a.active::after {
+  width: 100%;
+}
+/* Light sweep on hover */
+.nav-links li a::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -75%;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(120deg, rgba(255,255,255,0.4), rgba(255,255,255,0));
+  transform: skewX(-25deg);
+}
+.nav-links li a:hover::before {
+  animation: sweep 0.7s forwards;
+}
+@keyframes sweep {
+  0% { left: -75%; }
+  100% { left: 125%; }
+}
+/* Hamburger (mobile) */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+}
+.hamburger span {
+  width: 25px;
+  height: 3px;
+  background: #0ff;
+  border-radius: 3px;
+  transition: all 0.4s;
+}
+.hamburger.active span:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+.hamburger.active span:nth-child(2) {
+  opacity: 0;
+}
+.hamburger.active span:nth-child(3) {
+  transform: rotate(-45deg) translate(6px, -6px);
+}
+/* Light moving streak behind navbar */
+.navbar::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle at 50% 50%, rgba(0,255,255,0.2), transparent 70%);
+  animation: lightMove 6s linear infinite;
+  z-index: 0;
+}
+@keyframes lightMove {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+/* Responsive */
+@media (max-width: 768px) {
+  .nav-links {
+    position: absolute;
+    top: 70px;
+    right: 0;
+    flex-direction: column;   /* vertical on mobile */
+    width: 200px;
+    background: rgba(0,0,0,0.25);
+    backdrop-filter: blur(12px);
+    padding: 1rem;
+    border-radius: 12px;
+    display: none;
+    z-index: 999;
+  }
+  .nav-links.show {
+    display: flex;
+  }
+  .hamburger {
+    display: flex;
+  }
+}
+
+
+    /* Contact Section */
+    .contact {
+      max-width: 600px;
+      margin: 2rem auto 4rem;
+      padding: 2.5rem;
+      background: rgba(255, 255, 255, 0.9);
+      border-radius: 12px;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.2);
+      text-align: center;
+    }
+
+    .contact h1 {
+      margin-bottom: 1.5rem;
+    }
+
+    .contact form {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    input, textarea {
+      width: 100%;
+      padding: 0.8rem;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      font-family: 'Times New Roman', serif;
+      font-size: 1rem;
+    }
+
+    input::placeholder, textarea::placeholder {
+      font-family: 'Times New Roman', serif;
+    }
+
+    .btn {
+      background: #007bff;
+      color: #fff;
+      padding: 0.8rem;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 1rem;
+    }
+
+    .btn:hover {
+      background: #0056b3;
+    }
+
+    /* Social Links */
+    .socials {
+      margin-top: 1.5rem;
+    }
+
+    .socials a {
+      margin: 0 10px;
+      color: #007bff;
+      font-size: 1.5rem;
+    }
+
+    /* Dark Mode Toggle */
+    .toggle-dark {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      padding: 0.7rem;
+      border: none;
+      border-radius: 50%;
+      font-size: 1.2rem;
+      cursor: pointer;
+    }
+  </style>
+
+  <!-- EmailJS SDK -->
+  <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+</head>
+<body>
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="logo">📂 Work Gallery</div>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="projects.html">Projects</a></li>
+      <li><a href="resume.html">Resume</a></li>
+      <li><a href="contact.html" class="active">Contact</a></li>
+    </ul>
+    <div class="hamburger" onclick="toggleMenu()">☰</div>
+  </nav>
+
+  <!-- Contact Section -->
+  <section class="contact">
+    <h1>Contact Me</h1>
+    <form id="contact-form">
+      <input type="text" name="user_name" placeholder="Your Name" required>
+      <input type="email" name="user_email" placeholder="Your Email" required>
+      <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
+      <button type="submit" class="btn">Send Message</button>
+    </form>
+
+    <div class="socials">
+      <a href="https://github.com/Subhanu-S" target="_blank"><i class="fab fa-github"></i></a>
+      <a href="http://www.linkedin.com/in/subhanu-sasikumar-949507301" target="_blank"><i class="fab fa-linkedin"></i></a>
+      <a href="mailto:subhanusasikumar@gmail.com"><i class="fas fa-envelope"></i></a>
+    </div>
+  </section>
+
+  <!-- Dark Mode Toggle -->
+  <button class="toggle-dark" onclick="toggleDarkMode()">🌙</button>
+
+  <!-- Scripts -->
+  <script>
+    // Initialize EmailJS with your Public Key
+    emailjs.init("x97tDNrdiRlQqqJJX");
+
+    // Form submission
+    document.getElementById("contact-form").addEventListener("submit", function(e) {
+      e.preventDefault();
+
+      emailjs.sendForm("service_g4ckwmj", "template_572rzsi", this)
+        .then((response) => {
+          console.log("EmailJS Success:", response);
+          alert("✅ Message sent successfully! I will reply soon.");
+          this.reset();
+        })
+        .catch((error) => {
+          console.error("EmailJS Failed:", error);
+          alert("❌ Failed to send message. Check your Service ID, Template ID, and Public Key.");
+        });
+    });
+
+    // Dark mode toggle
+    function toggleDarkMode() {
+      document.body.classList.toggle("dark-mode");
+    }
+
+    // Mobile menu toggle
+    function toggleMenu() {
+      document.getElementById("navLinks").classList.toggle("show");
+    }
+  </script>
+</body>
+</html>
