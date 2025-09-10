@@ -48,7 +48,7 @@ I designed it with simplicity, responsiveness, and creativity in mind to reflect
 If you’d like to collaborate, connect, or just say Hi:  
 
 📧 Email: subhanusasikumar@gmail.com 
-💼 LinkedIn: [Your LinkedIn Profile](www.linkedin.com/in/subhanu-sasikumar-949507301)  
+💼 LinkedIn: [LinkedIn Profile](www.linkedin.com/in/subhanu-sasikumar-949507301)  
 
 ---
 
