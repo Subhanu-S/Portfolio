@@ -40,7 +40,7 @@ I designed it with simplicity, responsiveness, and creativity in mind to reflect
 ---
 
 ## 🎯 Live Demo  
-👉 [Click here to view my portfolio]([https://your-username.github.io/portfolio/])  
+👉 [Click here to view my portfolio]([ https://subhanu-s.github.io/Portfolio/])  
 
 ---
 
